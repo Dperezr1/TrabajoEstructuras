@@ -19,6 +19,9 @@ public class ListaPersonas {
         getLista().add(p);
         
     }
+    public void eliminar(){
+        getLista().remove(0);
+    }
     public void eliminar (Persona persona ){
         getLista().remove(persona);
     }

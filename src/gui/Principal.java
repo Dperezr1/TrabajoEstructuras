@@ -5,6 +5,7 @@
 package gui;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.ListaPersonas;
 import logica.Ordenamiento;
@@ -39,6 +40,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        botonGroupOrden = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
@@ -47,12 +49,15 @@ public class Principal extends javax.swing.JFrame {
         jTextNombre = new javax.swing.JTextField();
         jTextId = new javax.swing.JTextField();
         jTextEdad = new javax.swing.JTextField();
+        jButtonOrdenar = new javax.swing.JButton();
+        jRadioBubble = new javax.swing.JRadioButton();
+        jRadioInsert = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablaPersonas = new javax.swing.JTable();
         jButtonAgregar = new javax.swing.JButton();
         jButtonEliminar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jButtonOrdenar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,49 +71,86 @@ public class Principal extends javax.swing.JFrame {
 
         jLabelEdad.setText("Edad");
 
+        jButtonOrdenar.setText("Ordenar");
+        jButtonOrdenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOrdenarActionPerformed(evt);
+            }
+        });
+
+        botonGroupOrden.add(jRadioBubble);
+        jRadioBubble.setText("MENOR A MAYOR");
+
+        botonGroupOrden.add(jRadioInsert);
+        jRadioInsert.setText("MAYOR A MENOR");
+
+        jLabel2.setText("ORDENAMIENTOS");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabelNombre)
+                            .addGap(56, 56, 56)
+                            .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelId)
+                                .addComponent(jLabelEdad))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextId)
+                                .addComponent(jTextEdad))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelNombre)
-                        .addGap(56, 56, 56)
-                        .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(205, 205, 205)
+                        .addComponent(jLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelId)
-                            .addComponent(jLabelEdad))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextId)
-                            .addComponent(jTextEdad))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jRadioInsert)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jRadioBubble)
+                                .addGap(38, 38, 38)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(21, 21, 21)
+                            .addComponent(jButtonOrdenar)
+                            .addGap(9, 9, 9)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(47, 47, 47))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNombre)
-                    .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioBubble))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelId)
-                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioInsert))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelEdad)
-                    .addComponent(jTextEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jTextEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOrdenar))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jTablaPersonas.setModel(new javax.swing.table.DefaultTableModel(
@@ -129,18 +171,16 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButtonEliminar.setText("Eliminar");
+        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarActionPerformed(evt);
+            }
+        });
 
         jButtonSalir.setText("Salir");
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSalirActionPerformed(evt);
-            }
-        });
-
-        jButtonOrdenar.setText("Ordenar");
-        jButtonOrdenar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonOrdenarActionPerformed(evt);
             }
         });
 
@@ -155,11 +195,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtonAgregar)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButtonOrdenar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(176, 176, 176)
                         .addComponent(jButtonEliminar)
-                        .addGap(31, 31, 31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonSalir)))
                 .addContainerGap())
         );
@@ -174,8 +212,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAgregar)
                     .addComponent(jButtonEliminar)
-                    .addComponent(jButtonSalir)
-                    .addComponent(jButtonOrdenar))
+                    .addComponent(jButtonSalir))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -195,6 +232,10 @@ public class Principal extends javax.swing.JFrame {
         ordenar();
     }//GEN-LAST:event_jButtonOrdenarActionPerformed
 
+    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
+        eliminar();
+    }//GEN-LAST:event_jButtonEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -209,15 +250,19 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup botonGroupOrden;
     private javax.swing.JButton jButtonAgregar;
     private javax.swing.JButton jButtonEliminar;
     private javax.swing.JButton jButtonOrdenar;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelEdad;
     private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioBubble;
+    private javax.swing.JRadioButton jRadioInsert;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTablaPersonas;
     private javax.swing.JTextField jTextEdad;
@@ -243,20 +288,16 @@ public class Principal extends javax.swing.JFrame {
         
 
     }
-
     private void salir() {
         System.exit(0);
-    }
-    
+    }  
     private void agregarPersona(){
         lista.agregarPersona(new Persona(jTextNombre.getText(), Integer.parseInt(jTextEdad.getText()), Integer.parseInt(jTextId.getText())));
-        lista.imprimirLista();
         limpiartabla();
         cargaLista();
         limpiarCampos();
         
     }
-    
     private void limpiarCampos(){
         jTextEdad.setText("");
         jTextId.setText("");
@@ -277,7 +318,13 @@ public class Principal extends javax.swing.JFrame {
     }
     private void ordenar(){
         Ordenamiento orden = new Ordenamiento();
-        orden.bubbleSort(lista);
+        if(jRadioBubble.isSelected()){
+            orden.bubbleSort(lista);
+        }else if(jRadioInsert.isSelected()){
+            orden.insertionSort(lista);
+        }else{
+            JOptionPane.showMessageDialog(this, "SELECCIONE UN METODO DE ORDENAMIENTO ", "Error", JOptionPane.INFORMATION_MESSAGE);
+        }
         limpiartabla();
         cargaLista();
         
@@ -288,6 +335,11 @@ public class Principal extends javax.swing.JFrame {
             i=i-1;
         }
         
+    }
+    private void eliminar(){
+        lista.eliminar();
+        limpiartabla();
+        cargaLista();
     }
 
 }
