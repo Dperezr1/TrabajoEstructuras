@@ -9,8 +9,6 @@ import javax.swing.table.DefaultTableModel;
 import logica.ListaPersonas;
 import logica.Ordenamiento;
 import logica.Persona;
-import principal.MetodosOrdenamiento;
-
 /**
  *
  * @author Soporte
@@ -30,8 +28,6 @@ public class Principal extends javax.swing.JFrame {
         lista=new ListaPersonas();
         initComponents();
         iniciarTabla();
-        principal.MetodosOrdenamiento mo=new MetodosOrdenamiento();
-        mo.ordenarABC();
     }
 
     /**
